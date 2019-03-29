@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue模版语法</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+  {{fullName1}}
+  {{age}}
+</div>
+<script>
+  var vm = new Vue({
+    el:'#app',
+    data:{
+      firstName:"Dell",
+      lastName:"Lee",
+      age:28,
+      fullName1:'dl'
+    },
+    watch:{
+      firstName: function () {
+        this.fullName1= this.firstName+" "+ this.lastName
+      },
+      lastName:function(){
+        this.fullName1= this.firstName+" "+ this.lastName
+      }
+    },
+    methods:{
+      fullName:function () {
+        return this.firstName+" "+this.lastName
+      }
+
+    }
+  })
+</script>
+</body>
+</html>
